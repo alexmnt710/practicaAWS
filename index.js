@@ -6,6 +6,8 @@ app.get("/", (req, res) => {
   res.send("¡Hola desde ECS en AWS!");
 });
 
-app.listen(port, () => {
-  console.log(`App escuchando en http://localhost:${port}`);
+// escucha en todas las interfaces, no solo en localhost
+app.listen(port, "0.0.0.0", () => {
+  console.log(`App escuchando en http://0.0.0.0:${port}`);
 });
+
